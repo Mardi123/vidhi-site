@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vidhi — Pooja kits, done the proper way</title>
+<meta name="description" content="Vidhi brings complete, ready-to-use pooja kits for festivals, life ceremonies and last rites — with flowers, pandits and guidance arranged in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf6ec; --paper:#fffdf8; --ink:#2b1a12; --muted:#6e5a4c;
+    --saffron:#e8871e; --marigold:#f4b41a; --maroon:#7a1f1f; --line:#ead9bf;
+    --serif:"Cormorant Garamond", Georgia, serif; --sans:"Inter", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:16px}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(251,246,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--maroon);text-decoration:none;letter-spacing:.5px}
+  .logo span{color:var(--saffron)}
+  .nav a.btn{font-size:14px}
+  .navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  .navlinks a{text-decoration:none}
+  .navlinks a:hover{color:var(--maroon)}
+  @media(max-width:720px){.navlinks{display:none}}
+
+  .btn{display:inline-block;background:var(--maroon);color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600;border:none;cursor:pointer;font-family:var(--sans);font-size:15px}
+  .btn:hover{background:#5f1616}
+  .btn.ghost{background:transparent;color:var(--maroon);border:1.5px solid var(--maroon)}
+
+  /* hero */
+  .hero{padding:88px 0 72px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,var(--marigold) 0 18%,transparent 19%),repeating-conic-gradient(from 0deg,rgba(232,135,30,.18) 0 10deg,transparent 10deg 20deg);opacity:.7}
+  .eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--saffron);font-weight:600;margin-bottom:16px}
+  h1{font-family:var(--serif);font-size:clamp(40px,6vw,68px);line-height:1.05;font-weight:600;max-width:720px}
+  h1 em{color:var(--maroon);font-style:italic}
+  .lead{font-size:19px;color:var(--muted);max-width:600px;margin:22px 0 32px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+  section{padding:72px 0}
+  h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);font-weight:600;line-height:1.15;margin-bottom:12px}
+  .sub{color:var(--muted);max-width:620px;margin-bottom:40px}
+
+  /* kits */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--maroon);background:#f8e6d3;padding:3px 10px;border-radius:999px;margin-bottom:14px}
+  .card h3{font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:6px}
+  .card p{font-size:15px;color:var(--muted)}
+  .card.solemn{background:#f4efe8;border-color:#d9cfc2}
+  .card.solemn .tag{background:#e6ddd1;color:#4a3f36}
+
+  /* steps */
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+  .step{counter-increment:s}
+  .step::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;
+    background:var(--saffron);color:#fff;font-family:var(--serif);font-size:24px;font-weight:700;margin-bottom:14px}
+  .step h3{font-size:17px;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:15px}
+
+  /* network */
+  .band{background:var(--maroon);color:#fbeee0}
+  .band h2{color:#fff}
+  .band .sub{color:#e9cfc0}
+  .net{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .net div{border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:22px}
+  .net h3{font-family:var(--serif);font-size:22px;color:var(--marigold);margin-bottom:6px;font-weight:600}
+  .net p{font-size:15px;color:#ecd7c9}
+
+  /* contact */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  @media(max-width:760px){.contact{grid-template-columns:1fr}}
+  form{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:14px}
+  label{font-size:13px;font-weight:600;color:var(--muted)}
+  input,select,textarea{width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:5px}
+  textarea{min-height:96px;resize:vertical}
+  .note{font-size:13px;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;font-size:14px;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Vidhi<span>.</span></a>
+    <nav class="navlinks">
+      <a href="#kits">Kits</a><a href="#how">How it works</a><a href="#network">Our network</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Join the waitlist</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Launching soon · Bengaluru</p>
+      <h1>Every pooja, <em>done the proper way</em> — without the running around.</h1>
+      <p class="lead">Vidhi puts together complete, ready-to-use kits for festivals, family ceremonies and last rites. Everything the ritual calls for, in one box — with fresh flowers, a pandit and step-by-step guidance arranged if you need them.</p>
+      <div class="cta">
+        <a class="btn" href="#kits">See the kits</a>
+        <a class="btn ghost" href="#contact">Get early access</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="kits" style="padding-top:24px">
+    <div class="wrap">
+      <h2>Kits for the moments that matter</h2>
+      <p class="sub">Each kit is built around a specific occasion, so nothing is missing and nothing is wasted. Regional variations are part of the plan, not an afterthought.</p>
+      <div class="grid">
+        <div class="card"><span class="tag">Festival</span><h3>Ganesh Chaturthi</h3><p>Everything for the sthapana and daily aarti, through to visarjan.</p></div>
+        <div class="card"><span class="tag">Festival</span><h3>Diwali Lakshmi Pooja</h3><p>Diyas, kalash items, and offerings for the Lakshmi–Ganesh pooja.</p></div>
+        <div class="card"><span class="tag">Festival</span><h3>Varalakshmi Vratam</h3><p>The full vratam set, including the kalasham and thoram.</p></div>
+        <div class="card"><span class="tag">Ceremony</span><h3>Satyanarayana Pooja</h3><p>For house functions, milestones and thanksgiving.</p></div>
+        <div class="card"><span class="tag">Ceremony</span><h3>Griha Pravesh</h3><p>Housewarming essentials, from the kalash to the havan samagri.</p></div>
+        <div class="card solemn"><span class="tag">Last rites</span><h3>Antyeshti &amp; Shraddha</h3><p>Handled quietly and respectfully, delivered when families need it most — with a pandit arranged on request.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">Simple for you, careful behind the scenes.</p>
+      <div class="steps">
+        <div class="step"><h3>Pick the occasion</h3><p>Choose a festival or ceremony and tell us your tradition or region.</p></div>
+        <div class="step"><h3>Add what you need</h3><p>Fresh flowers, a pandit in person or online, or just the kit.</p></div>
+        <div class="step"><h3>Receive it ready</h3><p>Everything arrives labelled, in the order it's used.</p></div>
+        <div class="step"><h3>Follow along</h3><p>Video and step-by-step guides walk you through the vidhi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="network" class="band">
+    <div class="wrap">
+      <h2>One place for the whole ritual</h2>
+      <p class="sub">We're bringing together the people a pooja actually depends on.</p>
+      <div class="net">
+        <div><h3>Flower vendors</h3><p>Fresh garlands and loose flowers from local sellers, timed to your pooja.</p></div>
+        <div><h3>Pandits</h3><p>Experienced priests, available at home or over video.</p></div>
+        <div><h3>Temples</h3><p>Partnerships for archanas, offerings and special sevas.</p></div>
+        <div><h3>Guided videos</h3><p>Clear walkthroughs so first-timers can perform rituals with confidence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Be among the first</h2>
+        <p class="sub">We're starting in Bengaluru. Join the waitlist, or write to us if you're a flower vendor, pandit or temple who'd like to work with us.</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@vidhikits.com">hello@vidhikits.com</a></p>
+      </div>
+      <form id="waitlist">
+        <div><label for="n">Name</label><input id="n" name="name" required></div>
+        <div><label for="e">Email</label><input id="e" name="email" type="email" required></div>
+        <div><label for="r">I am a…</label>
+          <select id="r" name="role"><option>Customer</option><option>Flower vendor</option><option>Pandit</option><option>Temple</option><option>Other</option></select></div>
+        <div><label for="m">Message (optional)</label><textarea id="m" name="message" placeholder="Which occasions would you use Vidhi for?"></textarea></div>
+        <button class="btn" type="submit">Join the waitlist</button>
+        <p class="note">This opens your email app with your details filled in.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Vidhi · Bengaluru, India</span>
+    <a href="mailto:hello@vidhikits.com">hello@vidhikits.com</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('waitlist').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target;
+    var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\nRole: ' + f.role.value + '\n\n' + f.message.value;
+    window.location.href = 'mailto:hello@vidhikits.com?subject=' + encodeURIComponent('Vidhi waitlist') + '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
